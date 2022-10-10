@@ -1,4 +1,4 @@
-# cryptodeal/wails-build-action-bun@v0.0.1
+# cryptodeal/wails-bun-build-action@v0.0.1
 
 GitHub action to build Wails.io, the action will install GoLang, NodeJS and run a build.
 this is to be used on a [Wails.io](https://wails.io) v2 project. This runs on the latest release of Bun.sh vs Node.js and Deno, but otherwise implements no changes.
@@ -8,7 +8,7 @@ By default, the action will build and upload the results to github, on a tagged 
 # Default build
 
 ```yaml
-- uses: cryptodeal/wails-build-action-bun@v0.0.1
+- uses: cryptodeal/wails-bun-build-action@v0.0.1
   with:
     build-name: wailsApp
     build-platform: linux/amd64
@@ -17,7 +17,7 @@ By default, the action will build and upload the results to github, on a tagged 
 ## Build with No uploading
 
 ```yaml
-- uses: cryptodeal/wails-build-action-bun@v0.0.1
+- uses: cryptodeal/wails-bun-build-action@v0.0.1
   with:
     build-name: wailsApp
     build-platform: linux/amd64
@@ -69,7 +69,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
-      - uses: cryptodeal/wails-build-action-bun@v0.0.1
+      - uses: cryptodeal/wails-bun-build-action@v0.0.1
         with:
           build-name: ${{ matrix.build.name }}
           build-platform: ${{ matrix.build.platform }}
@@ -80,7 +80,7 @@ jobs:
 You need to make two gon configuration files, this is because we need to sign and notarize the .app before making an installer with it.
 
 ```yaml
-- uses: cryptodeal/wails-build-action-bun@v0.0.1
+- uses: cryptodeal/wails-bun-build-action@v0.0.1
   with:
     build-name: wailsApp
     sign: true

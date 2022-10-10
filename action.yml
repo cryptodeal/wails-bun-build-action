@@ -1,4 +1,4 @@
-name: "Wails Build Action Bun"
+name: "Wails Bun Build Action"
 description: "Creates a wails binary"
 
 inputs:
@@ -48,39 +48,39 @@ inputs:
   sign-macos-app-id:
     description: "MacOS Application Certificate id"
     required: false
-    default: ''
+    default: ""
   sign-macos-apple-password:
     description: "MacOS Apple password"
     required: false
-    default: ''
+    default: ""
   sign-macos-app-cert:
     description: "MacOS Application Certificate"
     required: false
-    default: ''
+    default: ""
   sign-macos-app-cert-password:
     description: "MacOS Application Certificate Password"
     required: false
-    default: ''
+    default: ""
   sign-macos-installer-id:
     description: "MacOS Installer Certificate id"
     required: false
-    default: ''
+    default: ""
   sign-macos-installer-cert:
     description: "MacOS Installer Certificate"
     required: false
-    default: ''
+    default: ""
   sign-macos-installer-cert-password:
     description: "MacOS Installer Certificate Password"
     required: false
-    default: ''
+    default: ""
   sign-windows-cert:
     description: "Windows Signing Certificate"
     required: false
-    default: ''
+    default: ""
   sign-windows-cert-password:
     description: "Windows Signing Certificate Password"
     required: false
-    default: ''
+    default: ""
 
 runs:
   using: "composite"
@@ -182,7 +182,7 @@ runs:
       env:
         APPLE_PASSWORD: ${{ inputs.sign-macos-apple-password }}
       run: |
-        gon -log-level=info ./build/darwin/gon-notarize.json      
+        gon -log-level=info ./build/darwin/gon-notarize.json
     # Windows signing
     - name: Sign Windows binaries
       shell: powershell
