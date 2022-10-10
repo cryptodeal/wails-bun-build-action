@@ -96,7 +96,9 @@ runs:
       shell: bash
     - name: Install macOS Wails deps
       if: runner.os == 'macOS'
-      run: brew install mitchellh/gon/gon
+      run: |
+        brew tap mitchellh/gon
+        brew install mitchellh/gon/gon
       shell: bash
     # Building step
     - name: Build App
@@ -190,7 +192,7 @@ runs:
         echo "Signing Installer" & 'C:/Program Files (x86)/Windows Kits/10/bin/10.0.17763.0/x86/signtool.exe' sign /fd sha256 /tr http://ts.ssl.com /f certificate\certificate.pfx /p '${{ inputs.sign-windows-cert-password }}' .\build\bin\${{inputs.build-name}}-amd64-installer.exe
 
     # Upload build assets
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3.1.0
       if: inputs.package == 'true'
       with:
         name: Wails Build ${{runner.os}} ${{inputs.build-name}}
