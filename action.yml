@@ -32,7 +32,7 @@ inputs:
   go-version:
     description: "Version of Go to use"
     required: false
-    default: "1.19"
+    default: "1.19.2"
   app-working-directory:
     description: "This gets run into bash, use the full command"
     required: false
