@@ -37,14 +37,6 @@ inputs:
     description: "This gets run into bash, use the full command"
     required: false
     default: "."
-  deno-working-directory:
-    description: "This gets run into bash, use the full command"
-    required: false
-    default: "."
-  deno-version:
-    description: "Deno version to use"
-    required: false
-    default: "v1.20.x"
   sign-macos-app-id:
     description: "MacOS Application Certificate id"
     required: false
